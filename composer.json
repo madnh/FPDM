@@ -7,6 +7,16 @@
     "fpdf"
   ],
   "license": "FPDF",
-  "require": {},
-  "minimum-stability": "dev"
+  "type": "library",
+  "homepage": "https://github.com/madnh/FPDM",
+  "require": {
+    "php": ">=5.3.0"
+  },
+  "minimum-stability": "dev",
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/madnh/FPDM"
+    }
+  ]
 }
