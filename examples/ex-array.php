@@ -4,7 +4,7 @@
   Sample using a PHP array
 ****************************/
 
-require('../fpdm.php');
+require('../src/fpdm.php');
 
 $fields = array(
 	'name'    => 'My name',
@@ -13,7 +13,7 @@ $fields = array(
 	'phone'   => 'My phone number'
 );
 
-$pdf = new FPDM('template.pdf');
+$pdf = new MaDnh\FPDM('template.pdf');
 $pdf->Load($fields, false); // second parameter: false if field values are in ISO-8859-1, true if UTF-8
 $pdf->Merge();
 $pdf->Output();
