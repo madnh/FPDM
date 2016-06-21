@@ -1,0 +1,12 @@
+{
+  "name": "madnh/fpdm",
+  "description": "This script allows to merge data into a PDF form",
+  "keywords": [
+    "fpdm",
+    "pdf",
+    "fpdf"
+  ],
+  "license": "FPDF",
+  "require": {},
+  "minimum-stability": "dev"
+}
