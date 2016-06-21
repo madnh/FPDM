@@ -1,53 +1,39 @@
 <?php
-//
-//  FPDM - Filter Flate
-//  NOTE: requires ZLIB >= 1.0.9!
-//
+namespace MaDnh\FPDM\Filters;
 
-$__tmp = version_compare(phpversion(), "5") == -1 ? array('FilterFlateDecode') : array('FilterFlateDecode', false);
-if (!call_user_func_array('class_exists', $__tmp)) {
+class FilterFlate
+{
+
+    public $data = null;
+    public $dataLength = 0;
 
 
-    if (isset($FPDM_FILTERS)) array_push($FPDM_FILTERS, "FlateDecode");
-
-    class FilterFlate
+    /**
+     * Method to decode GZIP compressed data.
+     * @param string $data The compressed data.
+     * @return string
+     * @throws \Exception
+     */
+    public function decode($data)
     {
 
-        var $data = null;
-        var $dataLength = 0;
+        $this->data = $data;
+        $this->dataLength = strlen($data);
 
-        function error($msg)
-        {
-            die($msg);
+        // uncompress
+        $data = gzuncompress($data);
+
+        if (!$data) {
+            throw new \Exception("FilterFlateDecode: invalid stream data.");
         }
-
-        /**
-         * Method to decode GZIP compressed data.
-         *
-         * @param string data    The compressed data.
-         * @return uncompressed data
-         */
-        function decode($data)
-        {
-
-            $this->data = $data;
-            $this->dataLength = strlen($data);
-
-            // uncompress
-            $data = gzuncompress($data);
-
-            if (!$data) $this->error("FilterFlateDecode: invalid stream data.");
-
-            return $data;
-        }
-
-
-        function encode($in)
-        {
-            return gzcompress($in, 9);
-        }
+        return $data;
     }
 
+
+    function encode($in)
+    {
+        return gzcompress($in, 9);
+    }
 }
-//unset $__tmp;
+
 ?>

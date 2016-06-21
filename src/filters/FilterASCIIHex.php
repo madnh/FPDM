@@ -1,29 +1,18 @@
 <?php
-
-//
-//  FPDM - Filter ASCII Hex
-//  NOTE: Not tested but should work.
-//
-
-if (isset($FPDM_FILTERS)) array_push($FPDM_FILTERS, "ASCIIHexDecode");
+namespace MaDnh\FPDM\Filters;
 
 class FilterASCIIHex
 {
-
-
     /**
-     *Get a binary string from its hexadecimal representation
-     *
+     * Get a binary string from its hexadecimal representation
      * @internal same as _hex2bin ($hexString)
-     * @access public
      * @note Function was written because PHP has a bin2hex, but not a hex2bin!
      * @internal note pack(�C�,hexdec(substr($data,$i,2))) DOES NOT WORK
-     *
-     **/
-    function decode($data)
+     * @param $hexString
+     * @return bool|string
+     */
+    public function decode($hexString)
     {
-
-        $hexString = $data;
         $BinStr = '';
 
         $hexLength = strlen($hexString);
@@ -45,15 +34,13 @@ class FilterASCIIHex
      *Encodes a binary string to its hexadecimal representation
      *
      * @internal same as bin2hex
-     * @access public
      * @internal  dechex(ord($str{$i})); is buggy because for hex value of 0-15 heading 0 is missing! Using sprintf() to get it right.
      * @param string $str a binary string
      * @return string hex the hexified string
      **/
-    function encode($data)
+    public function encode($str)
     {
         //----------------------
-        $str = $data;
         $hex = "";
         $i = 0;
         do {

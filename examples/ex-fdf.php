@@ -6,7 +6,7 @@
 
 require('../src/fpdm.php');
 
-$pdf = new MaDnh\FPDM('template.pdf', 'fields.fdf');
+$pdf = new MaDnh\FPDM\FPDM('template.pdf', 'fields.fdf');
 $pdf->Merge();
 $pdf->Output();
 ?>
