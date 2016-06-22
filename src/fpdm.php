@@ -1,5 +1,5 @@
 <?php
-namespace MaDnh\FPDM;
+namespace FPDM;
 
 require('filters/FilterASCII85.php');
 require('filters/FilterASCIIHex.php');
@@ -7,11 +7,11 @@ require('filters/FilterFlate.php');
 require('filters/FilterLZW.php');
 require('filters/FilterStandard.php');
 
-use MaDnh\FPDM\Filters\FilterASCIIHex;
-use MaDnh\FPDM\Filters\FilterASCII85;
-use MaDnh\FPDM\Filters\FilterFlate;
-use MaDnh\FPDM\Filters\FilterLZW;
-use MaDnh\FPDM\Filters\FilterStandard;
+use FPDM\Filters\FilterASCIIHex;
+use FPDM\Filters\FilterASCII85;
+use FPDM\Filters\FilterFlate;
+use FPDM\Filters\FilterLZW;
+use FPDM\Filters\FilterStandard;
 
 define('FPDM_CACHE', dirname(__FILE__) . DIRECTORY_SEPARATOR . 'export' . DIRECTORY_SEPARATOR . 'cache' . DIRECTORY_SEPARATOR); //cache directory for fdf temporary files needed by pdftk.
 

@@ -1,5 +1,5 @@
 <?php
-namespace MaDnh\FPDM\Filters;
+namespace FPDM\Filters;
 
 class FilterASCIIHex
 {
