@@ -28,8 +28,7 @@ class FPDM
         "/Type" => "/\/Type\s+\/(\w+)$/",
         "/Subtype" => "/^\/Subtype\s+\/(\w+)$/"
     );
-
-
+    
     protected $pdf_source;      //string: full pathname to the input pdf , a form file
     protected $fdf_source;      //string: full pathname to the input fdf , a form data file
     protected $pdf_output;      //string: full pathname to the resulting filled pdf
