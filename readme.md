@@ -18,3 +18,7 @@ The resulting document is produced by the **Output()** method, which works the s
 Then try again with __modele2.pdf__.
 
 **Source**: [http://www.fpdf.org/en/script/script93.php](http://www.fpdf.org/en/script/script93.php)
+
+# NOTE
+
+### This respository just a wrapper of [http://www.fpdf.org/en/script/script93.php](http://www.fpdf.org/en/script/script93.php), so I'm so sorry I can't support about issues!
